@@ -1,14 +1,12 @@
-const mysql12 = require('mysql2');
+const mysql = require('mysql2');
+const Sequelize = require('sequelize');
 require('dotenv').config();
 
-const dBase = new mysql12(
-  process.env.DB_NAME,
-  process.env.DB_USER,
-  process.env.DB_PASSWORD,
-  {
+const dBase = mysql.createConnection({
     host: 'localhost',
-    dialect: 'mysql',
-  }
-);
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+  });
 
-
+module.exports = dBase;
