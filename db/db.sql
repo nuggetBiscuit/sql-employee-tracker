@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS sql-employee-tracker;
-CREATE DATABASE sql-employee-tracker;
+DROP DATABASE IF EXISTS mysql_employee_tracker_db;
+CREATE DATABASE mysql_employee_tracker_db;
