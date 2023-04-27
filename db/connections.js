@@ -1,15 +1,14 @@
-const Sequelize = require('sequelize');
+const mysql12 = require('mysql2');
 require('dotenv').config();
 
-const sequelize = new Sequelize(
+const dBase = new mysql12(
   process.env.DB_NAME,
   process.env.DB_USER,
   process.env.DB_PASSWORD,
   {
     host: 'localhost',
     dialect: 'mysql',
-    port: 3306,
   }
 );
 
-module.exports = sequelize;
+
