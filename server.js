@@ -188,10 +188,31 @@ inquirer.prompt({
         })
     });
   
+  } else if (answers.prompt === 'Add Department'){
+    inquirer.prompt([{
+      type: 'input',
+                name: 'department',
+                message: 'Name of the department?',
+                validate: departmentInput => {
+                    if (departmentInput) {
+                        return true;
+                    } else {
+                        console.log('Add A Department!');
+                        return false;
+                    }
+                }
+            }]).then((answers) => {
+                db.query(`INSERT INTO department (name) VALUES (?)`, [answers.department], (err, result) => {
+                    if (err) throw err;
+                    console.log(`Added ${answers.department} to the database.`)
+                    tracker();
+                });
+    })
   }
+
   else if (answers.prompt === 'Update An Employee Role') {
     // Calling the database to acquire the roles and managers
-    db.query(`SELECT * FROM employee, role`, (err, result) => {
+    db.query(`SELECT * FROM employee, roles`, (err, result) => {
         if (err) throw err;
 
         inquirer.prompt([
@@ -247,7 +268,7 @@ inquirer.prompt({
 
 
 
-} else if (answers.prompt === 'Log Out') {
+} else if (answers.prompt === 'Leave') {
     db.end();
     console.log("Good-Bye!");
 }
