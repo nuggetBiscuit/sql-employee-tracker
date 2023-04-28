@@ -7,7 +7,7 @@ VALUES
   ('Legal');
 
 -- Puts employee jobs into jobs table
-INSERT INTO job (title, salary, department_id)
+INSERT INTO roles (title, salary, department_id)
 VALUES
   ('Software Engineer', 95000, 1),
   ('Salesperson', 70000, 2),
