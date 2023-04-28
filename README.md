@@ -36,10 +36,6 @@ The following video shows an example of the application being used from the comm
 
 Link to video: (https://drive.google.com/file/d/1X17Pn20SlSEKezBmOEhw5ITYwR841jyv/view)
 
-## Mock-Up
-
-https://express-note-takr.herokuapp.com/notes
-
 
 ## Installation
 
